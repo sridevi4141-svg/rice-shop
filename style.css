@@ -1,10 +1,6 @@
-.body {
+body {
   margin: 0;
-  top:0;
   padding: 0;
-   padding-top: 70px;
-  padding-bottom: 100px;
-  overflow-x: hidden;
 }
 
 
@@ -15,10 +11,7 @@
   gap: 15px;
   padding: 20px;
   max-width: 800px;
-  width:100%;
   margin: auto;
-   padding-bottom: 120px; 
-   
 }
 
 .box {
@@ -41,17 +34,10 @@
 }
 /* Header */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background: green;
-  color: black;
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* 🔥 left + right */
   align-items: center;
-  z-index: 1000;
+  padding: 10px;
 }
 
 /* Tabs */
@@ -64,7 +50,7 @@
 
 .tabs button {
   padding: 8px 12px;
-  border-radius: 30px;
+  border-radius: 50px;
 }
 
 .tabs .active {
@@ -79,14 +65,14 @@
 
 
 .cart-btn {
-  position: absolute;
+  position: fixed;
+  top: 15px;
   right: 15px;
-  font-size: 20px;
+  font-size: 50px;
   background: white;
-  padding: 10px;
   border-radius: 50%;
-  margin: 10px;
- 
+  padding: 10px;
+  box-shadow: 0 0 5px gray;
 }/* Product */
 .product-card {
   display: flex;
@@ -98,11 +84,11 @@
   background: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   align-items: center;
-  width: 100%;          /* 🔥 prevent overflow */
+  width: 900px;          /* 🔥 prevent overflow */
 }
 
 .product-card img {
-  width: 200px;
+  width: 400px;
 }
 
 .details {
@@ -111,12 +97,12 @@
   font-size: 40px;
 }
 
-.details h3 {
-  font-size: 30px;   /* 🔥 bigger text */
+details h3 {
+  font-size: 50px;   /* 🔥 bigger text */
   margin: 0;
 }
 .price {
-  font-size: 30px;
+  font-size: 50px;
   font-weight: bold;
   color: green;
 }
@@ -142,8 +128,7 @@
 }
 
 .inputs input {
-  width: 70px;
-  height: 35px;
+  width: 100px;     /* 🔥 bigger boxes */
   padding: 12px;
   font-size: 20px;
   text-align: center;
@@ -184,7 +169,7 @@ input {
   font-size: 16px;
 }
 
-.button {
+button {
   width: auto;
  padding: 10px 18px;
   margin-top: 18px;
@@ -215,30 +200,28 @@ input {
 .center {
   text-align:center;
   width: 100%;
-  font-size:  18px;
+  font-size:  25px;
 
 }
 .order-box-bottom {
-  
- 
+  position: fixed;     /* 🔥 always bottom */
+  bottom: 0;
+  left: 0;
   width: 100%;
- 
-  height: 90px;   /* 🔥 fix height */
+  background:rgb(43, 138, 43);
+  border-top: 2px solid #ddd;
   padding: 10px;
-   box-sizing: border-box;
-  background: green;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  bottom: 0;
-   height: 80px;
+  align-items: left;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  font-size: 25px;
 }
 
 .order-btn {
-  font-size: 15px;        /* 🔥 text size */
+  font-size: 30px;        /* 🔥 text size */
   padding: 15px;
-  width: 20%;
+  width: 30%;
   background-color: #a72828;
   color: white;
   border: none;
@@ -257,21 +240,11 @@ body {
   background: #f5f5f5;
 }
 
-
 .header {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  background-color: green;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 12px 15px;   /* 🔥 height increase */
-  box-sizing: border-box;
-
-  z-index: 1000;
+  text-align: center;
+  padding: 15px;
+  background: green;
+  color: white;
 }
 
 #products {
@@ -303,25 +276,13 @@ body {
   font-size: 14px;
 }
 
-.cart-item {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 12px;
-  margin-bottom: 10px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.cart-item img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
+#cartItems {
+  font-size: 50px;
+  line-height: 1.6;
 }
 
 #cartItems strong {
-  font-size: 20px;
+  font-size: 40px;
 }
 
 h3 {
@@ -329,19 +290,6 @@ h3 {
 }
 
 @media (max-width: 600px) {
-  .product-card {
-    flex-direction: row;   /* 🔥 same layout */
-    align-items: center;
-  }
-
-  .product-card img {
-    width: 150px;   /* 🔥 image small */
-  }
-
-  .details h3 {
-    font-size: 20px;
-  }
-
   .price {
     font-size: 22px;
   }
@@ -354,7 +302,7 @@ h3 {
     font-size: 20px;
   }
 .category-btn {
-    font-size: 22px;
+    font-size: 26px;
     width: 100%;
   }
   .order-btn {
@@ -365,13 +313,16 @@ h3 {
 
 
 .category-btn {
-  font-size: 20px;
+  font-size: 30px;
   padding: 15px 25px;
   margin: 8px;
-  background-color: #080808;
+  background-color: #4CAF50;
   color: white;
   border: none;
   border-radius: 10px;
   cursor: pointer;
 }
 
+.category-btn:hover {
+  background-color: #45a049;
+}
